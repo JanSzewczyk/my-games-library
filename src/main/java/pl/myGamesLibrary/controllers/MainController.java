@@ -14,6 +14,7 @@ import pl.myGamesLibrary.utils.DialogUtils;
 import pl.myGamesLibrary.utils.FxmlUtils;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -30,6 +31,7 @@ public class MainController {
 
     @FXML
     private void initialize(){
+
         topMenuButtonsController.setMainController(this);
     }
 

@@ -13,7 +13,7 @@
    <children>
       <HBox alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0">
          <children>
-            <Label text="%add.category" />
+            <Label text="%add_category" />
             <TextField fx:id="categoryTextField" />
             <Button fx:id="addCategoryButton" mnemonicParsing="false" onAction="#addCategoryOnAction" text="%add.button" />
             <Label text="%choose.category" />

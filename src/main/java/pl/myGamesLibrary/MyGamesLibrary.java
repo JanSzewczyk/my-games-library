@@ -20,7 +20,7 @@ public class MyGamesLibrary extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Locale.setDefault(new Locale("pl"));
+        setLanguage();
         Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
         Scene scene = new Scene(borderPane);
         primaryStage.setScene(scene);
@@ -29,5 +29,9 @@ public class MyGamesLibrary extends Application {
 
         DBManager.initDatabase();
         FillDatabase.fillDatabase();
+    }
+
+    public void setLanguage(){
+        Locale.setDefault(new Locale("pl"));
     }
 }
