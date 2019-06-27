@@ -22,12 +22,16 @@
              </Menu>
              <Menu mnemonicParsing="false" text="%edit">
                   <items>
-                     <RadioMenuItem mnemonicParsing="false" onAction="#setCaspian" text="%caspian">
-                        <toggleGroup>
-                           <ToggleGroup fx:id="styleGroup" />
-                        </toggleGroup>
-                     </RadioMenuItem>
-                     <RadioMenuItem mnemonicParsing="false" onAction="#setModena" selected="true" text="%modena" toggleGroup="$styleGroup" />
+                     <Menu mnemonicParsing="false" text="Unspecified Menu">
+                        <items>
+                           <RadioMenuItem mnemonicParsing="false" onAction="#setCaspian" text="%caspian">
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="styleGroup" />
+                              </toggleGroup>
+                           </RadioMenuItem>
+                           <RadioMenuItem mnemonicParsing="false" onAction="#setModena" selected="true" text="%modena" toggleGroup="$styleGroup" />
+                        </items>
+                     </Menu>
                      <SeparatorMenuItem mnemonicParsing="false" />
                      <CheckMenuItem mnemonicParsing="false" onAction="#setAlwaysOnTop" text="%alwaysOnTop" />
                   </items>

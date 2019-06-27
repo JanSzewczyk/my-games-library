@@ -10,12 +10,12 @@
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.myGamesLibrary.controllers.TopMenuButtonsController">
    <children>
-      <ToggleButton mnemonicParsing="false" onAction="#openLibrary" prefHeight="80.0" prefWidth="150.0" text="%library">
+      <ToggleButton mnemonicParsing="false" onAction="#openLibrary" prefHeight="80.0" prefWidth="150.0" text="%games_library">
          <toggleGroup>
             <ToggleGroup fx:id="tougleButtons" />
          </toggleGroup>
       </ToggleButton>
-      <ToggleButton mnemonicParsing="false" onAction="#openListGames" prefHeight="80.0" prefWidth="150.0" text="%list.games" toggleGroup="$tougleButtons" />
+      <ToggleButton mnemonicParsing="false" onAction="#openListGames" prefHeight="80.0" prefWidth="150.0" text="%games_list" toggleGroup="$tougleButtons" />
       <ToggleButton mnemonicParsing="false" onAction="#openStatistics" prefHeight="80.0" prefWidth="150.0" text="%stats" toggleGroup="$tougleButtons" />
       <Button mnemonicParsing="false" onAction="#addGame" prefHeight="80.0" prefWidth="150.0" text="%add_book">
          <graphic>
@@ -26,7 +26,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button mnemonicParsing="false" onAction="#addCategory" prefHeight="80.0" text="%add.category">
+      <Button mnemonicParsing="false" onAction="#addCategory" prefHeight="80.0" text="%add_category">
          <graphic>
             <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -35,7 +35,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button minWidth="150.0" mnemonicParsing="false" onAction="#addAuthor" prefHeight="80.0" text="%add.author">
+      <Button minWidth="150.0" mnemonicParsing="false" onAction="#addAuthor" prefHeight="80.0" text="%add_author">
          <graphic>
             <ImageView fitHeight="48.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
