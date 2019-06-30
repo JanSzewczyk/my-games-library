@@ -8,16 +8,19 @@ import java.util.Date;
 @DatabaseTable(tableName = "GAMES")
 public class Game implements BaseModel {
 
+    public static final String AUTHOR_ID = "AUTHOR_ID";
+    public static final String CATEGORY_ID = "CATEGORY_ID";
+
     @DatabaseField(generatedId = true)
     private int id;
 
     @DatabaseField(columnName = "TITLE", canBeNull = false, unique = true)
     private String title;
 
-    @DatabaseField(columnName = "AUTHOR_ID", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = AUTHOR_ID, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Author author;
 
-    @DatabaseField(columnName = "CATEGORY_ID", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = CATEGORY_ID, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Category category;
 
     @DatabaseField(columnName = "DESCRIPTION")

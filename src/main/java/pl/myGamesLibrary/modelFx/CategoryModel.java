@@ -6,12 +6,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import pl.myGamesLibrary.database.dao.CategoryDao;
+import pl.myGamesLibrary.database.dao.GameDao;
 import pl.myGamesLibrary.database.dbuitls.DBManager;
 import pl.myGamesLibrary.database.models.Category;
+import pl.myGamesLibrary.database.models.Game;
 import pl.myGamesLibrary.utils.converters.ConverterCategory;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 import sun.reflect.generics.tree.Tree;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class CategoryModel {
@@ -47,10 +50,12 @@ public class CategoryModel {
         });
     }
 
-    public void deleteCatogoryById() throws ApplicationException {
+    public void deleteCatogoryById() throws ApplicationException, SQLException {
         CategoryDao categoryDao = new CategoryDao();
-        categoryDao.deleteById(Category.class, category.getValue().getId());
-
+        categoryDao.deleteById(Category.class, this.category.getValue().getId());
+        GameDao gameDao = new GameDao();
+        gameDao.deleteByColumnName(Game.CATEGORY_ID, this.category.getValue().getId());
+        // TODO: 29.06.2019 okienko z pytanie czy usunąć tu i author 
         init();
     }
 

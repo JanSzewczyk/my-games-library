@@ -5,11 +5,14 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.myGamesLibrary.database.dao.AuthorDao;
+import pl.myGamesLibrary.database.dao.GameDao;
 import pl.myGamesLibrary.database.dbuitls.DBManager;
 import pl.myGamesLibrary.database.models.Author;
+import pl.myGamesLibrary.database.models.Game;
 import pl.myGamesLibrary.utils.converters.ConverterAuthor;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class AuthorModel {
@@ -44,11 +47,12 @@ public class AuthorModel {
         init();
     }
 
-    public void deleteAuthorInDataBase() throws ApplicationException {
+    public void deleteAuthorInDataBase() throws ApplicationException, SQLException {
         AuthorDao authorDao = new AuthorDao();
         authorDao.deleteById(Author.class, this.getAuthorObjectPropertyEdit().getId());
-
-        init();
+        GameDao gameDao = new GameDao();
+        gameDao.deleteByColumnName(Game.AUTHOR_ID, this.getAuthorObjectPropertyEdit().getId());
+        this.init();
     }
 
     public AuthorFx getAuthorObjectProperty() {

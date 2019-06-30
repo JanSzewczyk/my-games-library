@@ -55,7 +55,7 @@ public class GameModel {
     }
 
     public void saveGameInDataBase() throws ApplicationException {
-        Game game = ConverterGame.convertToBook(this.getGameFxObjectProperty());
+        Game game = ConverterGame.convertToGame(this.getGameFxObjectProperty());
 
         CategoryDao categoryDao = new CategoryDao();
         Category category = categoryDao.findById(Category.class, this.getGameFxObjectProperty().getCategoryFx().getId());

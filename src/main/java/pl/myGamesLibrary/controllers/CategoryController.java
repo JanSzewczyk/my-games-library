@@ -11,6 +11,8 @@ import pl.myGamesLibrary.modelFx.CategoryModel;
 import pl.myGamesLibrary.utils.DialogUtils;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
+
 
 public class CategoryController {
 
@@ -74,7 +76,7 @@ public class CategoryController {
     public void onActionDeleteButton() {
         try {
             this.categoryModel.deleteCatogoryById();
-        } catch (ApplicationException e) {
+        } catch (ApplicationException | SQLException e) {
             DialogUtils.errorDialog(e.getMessage());
         }
     }

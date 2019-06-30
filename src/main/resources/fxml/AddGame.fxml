@@ -44,7 +44,7 @@
             <TextField fx:id="titleTextField" GridPane.columnIndex="1" />
             <HBox alignment="CENTER_RIGHT" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <Button fx:id="addGameButton" mnemonicParsing="false" onAction="#addGameOnAction" text="%add.button" />
+                  <Button fx:id="addGameButton" mnemonicParsing="false" onAction="#addGameOnAction" text="%save.button" />
                   <Button fx:id="clearControlsButton" mnemonicParsing="false" onAction="#clearControlsOnAction" text="%clear.button" />
                </children>
                <padding>

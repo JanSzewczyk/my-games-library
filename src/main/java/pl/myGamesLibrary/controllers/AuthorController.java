@@ -9,6 +9,8 @@ import pl.myGamesLibrary.modelFx.AuthorModel;
 import pl.myGamesLibrary.utils.DialogUtils;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
+
 
 public class AuthorController {
 
@@ -81,7 +83,7 @@ public class AuthorController {
     public void deleteAuthorOnAction() {
         try {
             this.authorModel.deleteAuthorInDataBase();
-        } catch (ApplicationException e) {
+        } catch (ApplicationException | SQLException e) {
             DialogUtils.errorDialog(e.getMessage());
         }
 

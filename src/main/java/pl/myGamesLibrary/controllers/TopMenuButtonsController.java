@@ -1,13 +1,12 @@
 package pl.myGamesLibrary.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
 
 public class TopMenuButtonsController {
 
     public static final String LIBRARY_FXML = "/fxml/Library.fxml";
-    public static final String LIST_GAMES_FXML = "/fxml/ListGames.fxml";
+    public static final String LIST_GAMES_FXML = "/fxml/GamesList.fxml";
     public static final String STATISTICS_FXML = "/fxml/Statistics.fxml";
     public static final String ADD_BOOK_FXML = "/fxml/AddGame.fxml";
     public static final String ADD_CATEGORY_FXML = "/fxml/AddCategory.fxml";

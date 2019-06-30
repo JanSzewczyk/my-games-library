@@ -22,7 +22,7 @@
              </Menu>
              <Menu mnemonicParsing="false" text="%edit">
                   <items>
-                     <Menu mnemonicParsing="false" text="Unspecified Menu">
+                     <Menu mnemonicParsing="false" text="%style">
                         <items>
                            <RadioMenuItem mnemonicParsing="false" onAction="#setCaspian" text="%caspian">
                               <toggleGroup>
