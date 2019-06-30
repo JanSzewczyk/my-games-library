@@ -10,6 +10,7 @@ import pl.myGamesLibrary.utils.DialogUtils;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 
 public class AuthorController {
@@ -81,11 +82,13 @@ public class AuthorController {
 
     @FXML
     public void deleteAuthorOnAction() {
-        try {
-            this.authorModel.deleteAuthorInDataBase();
-        } catch (ApplicationException | SQLException e) {
-            DialogUtils.errorDialog(e.getMessage());
+        Optional<ButtonType> result = DialogUtils.confirmationDialog("delete.author.title", "delete.author.header", "delete.author.content");
+        if(result.get() == ButtonType.OK){
+            try {
+                this.authorModel.deleteAuthorInDataBase();
+            } catch (ApplicationException | SQLException e) {
+                DialogUtils.errorDialog(e.getMessage());
+            }
         }
-
     }
 }

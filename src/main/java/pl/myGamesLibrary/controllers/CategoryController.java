@@ -2,16 +2,14 @@ package pl.myGamesLibrary.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import pl.myGamesLibrary.modelFx.CategoryFx;
 import pl.myGamesLibrary.modelFx.CategoryModel;
 import pl.myGamesLibrary.utils.DialogUtils;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
 import java.sql.SQLException;
+import java.util.Optional;
 
 
 public class CategoryController {
@@ -74,10 +72,15 @@ public class CategoryController {
 
     @FXML
     public void onActionDeleteButton() {
-        try {
-            this.categoryModel.deleteCatogoryById();
-        } catch (ApplicationException | SQLException e) {
-            DialogUtils.errorDialog(e.getMessage());
+        Optional<ButtonType> result = DialogUtils.confirmationDialog("delete.category.title", "delete.category.header", "delete.category.content");
+        if(result.get() == ButtonType.OK){
+            try {
+                this.categoryModel.deleteCatogoryById();
+            } catch (ApplicationException | SQLException e) {
+                DialogUtils.errorDialog(e.getMessage());
+            }
+        } else{
+            this.categoryComboBox.getSelectionModel().clearSelection();
         }
     }
 

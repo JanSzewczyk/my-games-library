@@ -40,7 +40,7 @@ public class MainController {
     }
 
     public void closeApplication() {
-        Optional<ButtonType> result = DialogUtils.confirmationDialog();
+        Optional<ButtonType> result = DialogUtils.confirmationDialog("exit.title", "exit.header", null);
         if(result.get() == ButtonType.OK){
             Platform.exit();
             System.exit(0);

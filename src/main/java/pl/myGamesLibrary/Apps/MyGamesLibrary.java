@@ -1,4 +1,4 @@
-package pl.myGamesLibrary;
+package pl.myGamesLibrary.Apps;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
