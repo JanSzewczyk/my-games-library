@@ -5,10 +5,9 @@ import com.j256.ormlite.logger.Logger;
 import com.j256.ormlite.logger.LoggerFactory;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-import pl.myGamesLibrary.database.models.Author;
-import pl.myGamesLibrary.database.models.Category;
-import pl.myGamesLibrary.database.models.Game;
+import pl.myGamesLibrary.database.models.*;
 
+import javax.jws.soap.SOAPBinding;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -60,6 +59,8 @@ public class DBManager {
             TableUtils.createTableIfNotExists(connectionSource, Author.class);
             TableUtils.createTableIfNotExists(connectionSource, Game.class);
             TableUtils.createTableIfNotExists(connectionSource, Category.class);
+            TableUtils.createTableIfNotExists(connectionSource, User.class);
+            TableUtils.createTableIfNotExists(connectionSource, Product.class);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }
@@ -70,6 +71,8 @@ public class DBManager {
             TableUtils.dropTable(connectionSource, Author.class, true);
             TableUtils.dropTable(connectionSource, Game.class, true);
             TableUtils.dropTable(connectionSource, Category.class, true);
+            TableUtils.dropTable(connectionSource, User.class, true);
+            TableUtils.dropTable(connectionSource, Product.class, true);
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
         }

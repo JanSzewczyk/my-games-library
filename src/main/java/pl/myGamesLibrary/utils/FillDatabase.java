@@ -2,10 +2,12 @@ package pl.myGamesLibrary.utils;
 
 import pl.myGamesLibrary.database.dao.CategoryDao;
 import pl.myGamesLibrary.database.dao.GameDao;
+import pl.myGamesLibrary.database.dao.UserDao;
 import pl.myGamesLibrary.database.dbuitls.DBManager;
 import pl.myGamesLibrary.database.models.Author;
 import pl.myGamesLibrary.database.models.Category;
 import pl.myGamesLibrary.database.models.Game;
+import pl.myGamesLibrary.database.models.User;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
 import java.util.Date;
@@ -127,6 +129,33 @@ public class FillDatabase {
             e.printStackTrace();
         }
 
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        User user0 = new User();
+        user0.setNick("Janeczek");
+        user0.setEmail("jan@gmail.com");
+        user0.setLangualge("PL");
+        user0.setPassword("qazwsxedc");
+        user0.setBirthDay(new Date(97,3,22));
+
+        User user1 = new User();
+        user1.setNick("Kinia123");
+        user1.setEmail("kinia@gmail.com");
+        user1.setLangualge("PL");
+        user1.setPassword("qazwsxedc");
+        user1.setBirthDay(new Date(92,2,14));
+
+
+        UserDao userDao = new UserDao();
+        try {
+            userDao.creatOrUpdate(user0);
+            userDao.creatOrUpdate(user1);
+        } catch (ApplicationException e) {
+            e.printStackTrace();
+        }
     }
 
 }

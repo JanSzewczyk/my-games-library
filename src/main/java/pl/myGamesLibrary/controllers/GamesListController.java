@@ -47,6 +47,7 @@ public class GamesListController {
 
     private GamesListModel gamesListModel;
 
+    @FXML
     public void initialize(){
         this.gamesListModel = new GamesListModel();
         try {

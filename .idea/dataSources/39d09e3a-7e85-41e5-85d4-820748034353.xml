@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="libraryDB">
-  <database-model serializer="dbm" dbms="H2" family-id="H2" format-version="4.15">
+  <database-model serializer="dbm" dbms="H2" family-id="H2" format-version="4.14">
     <root id="1">
       <ServerVersion>1.4.196</ServerVersion>
     </root>
@@ -16,124 +16,212 @@
     <table id="5" parent="4" name="AUTHORS"/>
     <table id="6" parent="4" name="CATEGORIES"/>
     <table id="7" parent="4" name="GAMES"/>
-    <column id="8" parent="5" name="ID">
+    <table id="8" parent="4" name="PRODUCTS"/>
+    <table id="9" parent="4" name="USERS"/>
+    <column id="10" parent="5" name="ID">
       <Position>1</Position>
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_3E535A18_0358_4A69_BA6B_A513AC3A7EB1)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_D8EE762B_4084_486E_BD3C_F8A10D37899A)</DefaultExpression>
     </column>
-    <column id="9" parent="5" name="NAME">
+    <column id="11" parent="5" name="NAME">
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="10" parent="5" name="PRIMARY_KEY_4">
+    <index id="12" parent="5" name="PRIMARY_KEY_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="11" parent="5" name="CONSTRAINT_INDEX_4">
+    <index id="13" parent="5" name="CONSTRAINT_INDEX_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>NAME</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="12" parent="5" name="CONSTRAINT_44">
+    <key id="14" parent="5" name="CONSTRAINT_44">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="13" parent="5" name="CONSTRAINT_INDEX_4">
+    <key id="15" parent="5" name="CONSTRAINT_INDEX_4">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>NAME</ColNames>
     </key>
-    <column id="14" parent="6" name="ID">
+    <column id="16" parent="6" name="ID">
       <Position>1</Position>
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_F7912612_3111_42AE_8C37_590DB6F4C91B)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_EEF031C8_606E_45A7_963A_65087B51A7C0)</DefaultExpression>
     </column>
-    <column id="15" parent="6" name="NAME">
+    <column id="17" parent="6" name="NAME">
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="16" parent="6" name="PRIMARY_KEY_6">
+    <index id="18" parent="6" name="PRIMARY_KEY_6">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="17" parent="6" name="CONSTRAINT_INDEX_6">
+    <index id="19" parent="6" name="CONSTRAINT_INDEX_6">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>NAME</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="18" parent="6" name="CONSTRAINT_6A">
+    <key id="20" parent="6" name="CONSTRAINT_6A">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="19" parent="6" name="CONSTRAINT_INDEX_6">
+    <key id="21" parent="6" name="CONSTRAINT_INDEX_6">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>NAME</ColNames>
     </key>
-    <column id="20" parent="7" name="ID">
+    <column id="22" parent="7" name="ID">
       <Position>1</Position>
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
-      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_6AEA0896_C548_440F_B7AA_5DE60D5508DD)</DefaultExpression>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_E1D5D637_37EB_464B_8D90_AC963B6C6B24)</DefaultExpression>
     </column>
-    <column id="21" parent="7" name="TITLE">
+    <column id="23" parent="7" name="TITLE">
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="7" name="AUTHOR_ID">
+    <column id="24" parent="7" name="AUTHOR_ID">
       <Position>3</Position>
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="7" name="CATEGORY_ID">
+    <column id="25" parent="7" name="CATEGORY_ID">
       <Position>4</Position>
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="7" name="DESCRIPTION">
+    <column id="26" parent="7" name="DESCRIPTION">
       <Position>5</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="25" parent="7" name="RELEASE_DATE">
+    <column id="27" parent="7" name="RELEASE_DATE">
       <Position>6</Position>
       <DataType>TIMESTAMP(23,10)|93s</DataType>
     </column>
-    <column id="26" parent="7" name="RATING">
+    <column id="28" parent="7" name="RATING">
       <Position>7</Position>
       <DataType>INTEGER(10)|4s</DataType>
     </column>
-    <column id="27" parent="7" name="ADDED_DATE">
+    <column id="29" parent="7" name="ADDED_DATE">
       <Position>8</Position>
       <DataType>TIMESTAMP(23,10)|93s</DataType>
     </column>
-    <index id="28" parent="7" name="PRIMARY_KEY_40">
+    <index id="30" parent="7" name="PRIMARY_KEY_40">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="29" parent="7" name="CONSTRAINT_INDEX_40">
+    <index id="31" parent="7" name="CONSTRAINT_INDEX_40">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TITLE</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="30" parent="7" name="CONSTRAINT_407">
+    <key id="32" parent="7" name="CONSTRAINT_407">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="31" parent="7" name="CONSTRAINT_INDEX_40">
+    <key id="33" parent="7" name="CONSTRAINT_INDEX_40">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>TITLE</ColNames>
+    </key>
+    <column id="34" parent="8" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_2EFA5470_1497_42ED_A1ED_61CE211F5852)</DefaultExpression>
+    </column>
+    <column id="35" parent="8" name="USER_ID">
+      <Position>2</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="8" name="GAME_ID">
+      <Position>3</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="37" parent="8" name="PRIMARY_KEY_F">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="8" name="CONSTRAINT_F">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="9" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR PUBLIC.SYSTEM_SEQUENCE_6CC0DD45_A3ED_4D94_ABE8_7D8FC2DF0D33)</DefaultExpression>
+    </column>
+    <column id="40" parent="9" name="NICK">
+      <Position>2</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="9" name="EMAIL">
+      <Position>3</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="9" name="PASSWORD">
+      <Position>4</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="9" name="LANGUAGE">
+      <Position>5</Position>
+      <DataType>VARCHAR(255)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="9" name="BIRTH_DAY">
+      <Position>6</Position>
+      <DataType>TIMESTAMP(23,10)|93s</DataType>
+    </column>
+    <index id="45" parent="9" name="PRIMARY_KEY_4D">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="46" parent="9" name="CONSTRAINT_INDEX_4D">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NICK</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="47" parent="9" name="CONSTRAINT_INDEX_4D4">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EMAIL</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="9" name="CONSTRAINT_4D49">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="49" parent="9" name="CONSTRAINT_INDEX_4D">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NICK</ColNames>
+    </key>
+    <key id="50" parent="9" name="CONSTRAINT_INDEX_4D4">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EMAIL</ColNames>
     </key>
   </database-model>
 </dataSource>

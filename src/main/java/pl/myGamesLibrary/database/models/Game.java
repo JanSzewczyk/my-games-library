@@ -1,6 +1,8 @@
 package pl.myGamesLibrary.database.models;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.Date;
@@ -22,6 +24,9 @@ public class Game implements BaseModel {
 
     @DatabaseField(columnName = CATEGORY_ID, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Category category;
+
+    @ForeignCollectionField(eager = true)
+    private ForeignCollection<Product> products;
 
     @DatabaseField(columnName = "DESCRIPTION")
     private String description;
@@ -61,6 +66,14 @@ public class Game implements BaseModel {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public ForeignCollection<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(ForeignCollection<Product> products) {
+        this.products = products;
     }
 
     public String getTitle() {

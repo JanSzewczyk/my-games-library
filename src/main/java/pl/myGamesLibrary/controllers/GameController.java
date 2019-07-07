@@ -66,8 +66,7 @@ public class GameController {
     }
 
     private void validation() {
-        this.addGameButton.disableProperty()
-                .bind(this.titleTextField.textProperty().isEmpty()
+        this.addGameButton.disableProperty().bind(this.titleTextField.textProperty().isEmpty()
                 .or(this.categoryComboBox.valueProperty().isNull())
                 .or(this.authorComboBox.valueProperty().isNull())
                 .or(this.descTextArea.textProperty().isEmpty())
@@ -92,6 +91,7 @@ public class GameController {
 
     }
 
+    @FXML
     public void clearControlsOnAction() {
         clearFields();
     }

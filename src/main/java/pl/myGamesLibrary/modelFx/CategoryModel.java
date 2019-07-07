@@ -55,7 +55,6 @@ public class CategoryModel {
         categoryDao.deleteById(Category.class, this.category.getValue().getId());
         GameDao gameDao = new GameDao();
         gameDao.deleteByColumnName(Game.CATEGORY_ID, this.category.getValue().getId());
-        // TODO: 29.06.2019 okienko z pytanie czy usunąć tu i author 
         init();
     }
 

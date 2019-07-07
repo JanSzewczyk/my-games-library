@@ -22,8 +22,8 @@ public class DialogUtils {
 
     public static Optional<ButtonType> confirmationDialog(String keyTitle , String keyHeader, String keyContent){
         Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmationDialog.setTitle(bundle.getString(keyTitle)); //"exit.title"
-        confirmationDialog.setHeaderText(bundle.getString(keyHeader));//"exit.header"
+        confirmationDialog.setTitle(bundle.getString(keyTitle));
+        confirmationDialog.setHeaderText(bundle.getString(keyHeader));
         if(keyContent != null)
             confirmationDialog.setContentText(bundle.getString(keyContent));
 
