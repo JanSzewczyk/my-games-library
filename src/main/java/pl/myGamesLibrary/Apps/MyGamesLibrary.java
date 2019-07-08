@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pl.myGamesLibrary.database.dbuitls.DBManager;
+import pl.myGamesLibrary.database.models.User;
 import pl.myGamesLibrary.utils.FillDatabase;
 import pl.myGamesLibrary.utils.FxmlUtils;
 
@@ -14,13 +15,13 @@ public class MyGamesLibrary extends Application {
 
     public static final String BORDER_PANE_MAIN_FXML = "/fxml/BorderPaneMain.fxml";
 
-    public static void main(String[] args) {
-        launch(args);
+    public static void main() {
+        launch();
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        setLanguage();
+        setLanguage("PL");
         Pane borderPane = FxmlUtils.fxmlLoader(BORDER_PANE_MAIN_FXML);
         Scene scene = new Scene(borderPane);
         primaryStage.setScene(scene);
@@ -31,7 +32,7 @@ public class MyGamesLibrary extends Application {
         FillDatabase.fillDatabase();
     }
 
-    public void setLanguage(){
-        Locale.setDefault(new Locale("pl"));
+    public void setLanguage(String language){
+        Locale.setDefault(new Locale(language));
     }
 }

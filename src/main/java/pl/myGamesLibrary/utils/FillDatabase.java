@@ -136,7 +136,7 @@ public class FillDatabase {
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
         User user0 = new User();
         user0.setNick("Janeczek");
-        user0.setEmail("jan@gmail.com");
+        user0.setEmail("jan.szewczyk1997@gmail.com");
         user0.setLangualge("PL");
         user0.setPassword("qazwsxedc");
         user0.setBirthDay(new Date(97,3,22));
@@ -148,11 +148,18 @@ public class FillDatabase {
         user1.setPassword("qazwsxedc");
         user1.setBirthDay(new Date(92,2,14));
 
+        User user2 = new User();
+        user2.setNick("q");
+        user2.setEmail("q");
+        user2.setLangualge("PL");
+        user2.setPassword("q");
+        user2.setBirthDay(new Date(92,12,14));
 
         UserDao userDao = new UserDao();
         try {
             userDao.creatOrUpdate(user0);
             userDao.creatOrUpdate(user1);
+            userDao.creatOrUpdate(user2);
         } catch (ApplicationException e) {
             e.printStackTrace();
         }
