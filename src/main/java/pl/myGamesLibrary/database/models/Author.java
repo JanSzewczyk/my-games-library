@@ -17,9 +17,11 @@ public class Author implements BaseModel {
     @ForeignCollectionField(eager = true)
     private ForeignCollection<Game> games;
 
+
     public Author(){
 
     }
+
 
     public int getId() {
         return id;

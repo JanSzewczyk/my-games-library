@@ -35,8 +35,10 @@ public class User implements BaseModel {
     @DatabaseField(columnName = "BIRTH_DAY")
     private Date birthDay;
 
+
     public User() {
     }
+
 
     public int getId() {
         return id;

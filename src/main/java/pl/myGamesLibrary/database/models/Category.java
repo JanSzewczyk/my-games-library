@@ -17,8 +17,10 @@ public class Category implements BaseModel {
     @ForeignCollectionField(columnName = "BOOK_ID")
     private ForeignCollection<Game> games;
 
+
     public Category(){
     }
+
 
     public int getId() {
         return id;

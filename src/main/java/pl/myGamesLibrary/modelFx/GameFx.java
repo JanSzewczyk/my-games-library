@@ -114,15 +114,6 @@ public class GameFx {
 
     @Override
     public String toString() {
-        return "GameFx{" +
-                "id=" + id.get() +
-                ", categoryFx=" + categoryFx.get() +
-                ", authorFx=" + authorFx.get() +
-                ", title=" + title.get() +
-                ", description=" + description.get() +
-                ", releaseDate=" + releaseDate.get() +
-                ", rating=" + rating.get() +
-                ", addedDate=" + addedDate.get() +
-                '}';
+        return this.title.getValue();
     }
 }

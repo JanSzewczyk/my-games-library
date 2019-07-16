@@ -34,16 +34,18 @@ public class Game implements BaseModel {
     @DatabaseField(columnName = "RELEASE_DATE")
     private Date releaseDate;
 
-    @DatabaseField(columnName = "RATING",   width = 1)
+    @DatabaseField(columnName = "RATING",   width = 2)
     private int rating;
 
     @DatabaseField(columnName = "ADDED_DATE")
     private Date addedDate;
 
+
     public Game(){
 
     }
 
+    
     public int getId() {
         return id;
     }

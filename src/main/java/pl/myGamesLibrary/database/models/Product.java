@@ -15,6 +15,16 @@ public class Product implements BaseModel {
     @DatabaseField(columnName = "GAME_ID", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Game game;
 
+    @DatabaseField(columnName = "MY_RATING",   width = 2)
+    private int myRating;
+
+    @DatabaseField(columnName = "MY_OPINION")
+    private String myOpinion;
+
+
+    public Product() {
+    }
+
 
     public int getId() {
         return id;
@@ -38,5 +48,32 @@ public class Product implements BaseModel {
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    public int getMyRating() {
+        return myRating;
+    }
+
+    public void setMyRating(int myRating) {
+        this.myRating = myRating;
+    }
+
+    public String getMyOpinion() {
+        return myOpinion;
+    }
+
+    public void setMyOpinion(String myOpinion) {
+        this.myOpinion = myOpinion;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", user=" + user +
+                ", game=" + game +
+                ", myRating=" + myRating +
+                ", myOpinion='" + myOpinion + '\'' +
+                '}';
     }
 }

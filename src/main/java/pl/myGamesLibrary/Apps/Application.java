@@ -1,14 +1,11 @@
 package pl.myGamesLibrary.Apps;
 
-
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pl.myGamesLibrary.database.dbuitls.DBManager;
 import pl.myGamesLibrary.utils.FillDatabase;
 import pl.myGamesLibrary.utils.FxmlUtils;
-
-import java.util.Locale;
 
 public class Application extends javafx.application.Application {
 
@@ -26,11 +23,9 @@ public class Application extends javafx.application.Application {
         primaryStage.setTitle(FxmlUtils.getResourceBundle().getString("title.application"));
         //primaryStage.setAlwaysOnTop(true);
         primaryStage.setResizable(false);
-        System.out.println("elo");
         primaryStage.show();
 
         DBManager.initDatabase();
         FillDatabase.fillDatabase();
     }
-
 }

@@ -36,7 +36,7 @@
             <TableColumn fx:id="ratingColumn" prefWidth="75.0" text="%rating.game" />
             <TableColumn fx:id="releaseColumn" prefWidth="125.5999755859375" text="%release.game" />
             <TableColumn fx:id="deleteColumn" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="%delete.button" />
-            <TableColumn fx:id="editColumn" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="%edit" />
+            <TableColumn fx:id="editColumn" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="%edit.button" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
