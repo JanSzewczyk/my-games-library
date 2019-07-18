@@ -18,7 +18,9 @@ import pl.myGamesLibrary.utils.FxmlUtils;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class GamesListController {
 
@@ -86,10 +88,13 @@ public class GamesListController {
                 if(!empty){
                     setGraphic(button);
                     button.setOnAction(event -> {
-                        try {
-                            gamesListModel.deleteGame(item);
-                        } catch (ApplicationException e) {
-                            DialogUtils.errorDialog(e.getMessage());
+                        Optional<ButtonType> result = DialogUtils.confirmationDialog("delete.game.title", "delete.game.header", "delete.game.content");
+                        if(result.get() == ButtonType.OK) {
+                            try {
+                                gamesListModel.deleteGame(item);
+                            } catch (ApplicationException | SQLException e) {
+                                DialogUtils.errorDialog(e.getMessage());
+                            }
                         }
                     });
                 }

@@ -23,19 +23,19 @@
     <RowConstraints vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label text="Wybierz grę " />
-      <ComboBox fx:id="gameComboBox" prefWidth="150.0" GridPane.columnIndex="1">
+      <Label text="%addproduct.choose" />
+      <ComboBox fx:id="gameComboBox" minWidth="150.0" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </GridPane.margin>
       </ComboBox>
-      <Label text="Twoja opinia " GridPane.rowIndex="1" />
-      <TextArea fx:id="opinionTextArea" prefHeight="125.0" prefWidth="420.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Label text="%addproduct.myOpinion" GridPane.rowIndex="1" />
+      <TextArea fx:id="opinionTextArea" prefHeight="125.0" prefWidth="420.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="10.0" top="10.0" />
          </GridPane.margin>
       </TextArea>
-      <Label text="ocena :" GridPane.rowIndex="2" />
+      <Label text="%addproduct.rating" GridPane.rowIndex="2" />
       <Slider fx:id="myRatingSlider" blockIncrement="1.0" majorTickUnit="1.0" max="10.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="10.0" top="10.0" />
@@ -43,8 +43,8 @@
       </Slider>
       <HBox alignment="CENTER_RIGHT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <children>
-            <Button mnemonicParsing="false" onAction="#backOnClick" text="Back" />
-            <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#addProductOnClick" text="Add" />
+            <Button mnemonicParsing="false" onAction="#backOnClick" text="%addproduct.back.button" />
+            <Button fx:id="addProductButton" mnemonicParsing="false" onAction="#addProductOnClick" text="%addproduct.add.button" />
          </children>
          <opaqueInsets>
             <Insets />

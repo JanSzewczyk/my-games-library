@@ -7,14 +7,17 @@ import javafx.collections.ObservableList;
 import pl.myGamesLibrary.database.dao.AuthorDao;
 import pl.myGamesLibrary.database.dao.CategoryDao;
 import pl.myGamesLibrary.database.dao.GameDao;
+import pl.myGamesLibrary.database.dao.ProductDao;
 import pl.myGamesLibrary.database.models.Author;
 import pl.myGamesLibrary.database.models.Category;
 import pl.myGamesLibrary.database.models.Game;
+import pl.myGamesLibrary.database.models.Product;
 import pl.myGamesLibrary.utils.converters.ConverterAuthor;
 import pl.myGamesLibrary.utils.converters.ConverterCategory;
 import pl.myGamesLibrary.utils.converters.ConverterGame;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
@@ -93,9 +96,12 @@ public class GamesListModel {
         this.gameFxObservableList.setAll(newList);
     }
 
-    public void deleteGame(GameFx gameFx) throws ApplicationException {
+    public void deleteGame(GameFx gameFx) throws ApplicationException, SQLException {
         GameDao gameDao = new GameDao();
         gameDao.deleteById(Game.class, gameFx.getId());
+
+        ProductDao productDao = new ProductDao();
+        productDao.deleteByColumnName(Product.GAME_ID, gameFx.getId());
         init();
     }
 
@@ -147,6 +153,4 @@ public class GamesListModel {
     public void setCategoryFxObjectProperty(CategoryFx categoryFxObjectProperty) {
         this.categoryFxObjectProperty.set(categoryFxObjectProperty);
     }
-
-
 }

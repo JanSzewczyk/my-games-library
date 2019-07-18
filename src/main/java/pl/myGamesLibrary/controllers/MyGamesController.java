@@ -1,22 +1,14 @@
 package pl.myGamesLibrary.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import pl.myGamesLibrary.database.models.User;
 import pl.myGamesLibrary.modelFx.MyGamesModel;
 import pl.myGamesLibrary.modelFx.ProductFx;
 import pl.myGamesLibrary.utils.DialogUtils;
-import pl.myGamesLibrary.utils.FxmlUtils;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
-
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class MyGamesController {

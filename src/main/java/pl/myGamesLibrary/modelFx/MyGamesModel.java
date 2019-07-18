@@ -43,8 +43,7 @@ public class MyGamesModel {
             this.productFxObservableList.add(productFx);
         });
     }
-
-    // TODO: 16.07.2019 zrobić metodę niżej, aby działało !!!
+    
     public void initEmptyProduct(){
         setProductFxObjectProperty(null);
     }

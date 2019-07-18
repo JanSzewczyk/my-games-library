@@ -27,6 +27,7 @@ public class AuthorController {
 
     private AuthorModel authorModel;
 
+
     @FXML
     public void initialize(){
         this.authorModel = new AuthorModel();

@@ -6,9 +6,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.myGamesLibrary.database.dao.AuthorDao;
 import pl.myGamesLibrary.database.dao.GameDao;
-import pl.myGamesLibrary.database.dbuitls.DBManager;
+import pl.myGamesLibrary.database.dao.ProductDao;
 import pl.myGamesLibrary.database.models.Author;
 import pl.myGamesLibrary.database.models.Game;
+import pl.myGamesLibrary.database.models.Product;
 import pl.myGamesLibrary.utils.converters.ConverterAuthor;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
@@ -50,7 +51,16 @@ public class AuthorModel {
     public void deleteAuthorInDataBase() throws ApplicationException, SQLException {
         AuthorDao authorDao = new AuthorDao();
         authorDao.deleteById(Author.class, this.getAuthorObjectPropertyEdit().getId());
+
         GameDao gameDao = new GameDao();
+        List<Game> games = gameDao.findAllByColumnName(Game.AUTHOR_ID, this.getAuthorObjectPropertyEdit().getId());
+
+        ProductDao productDao = new ProductDao();
+        for(Game game : games) {
+            productDao.deleteByColumnName(Product.GAME_ID, game.getId());
+        }
+
+        //GameDao gameDao = new GameDao();
         gameDao.deleteByColumnName(Game.AUTHOR_ID, this.getAuthorObjectPropertyEdit().getId());
         this.init();
     }

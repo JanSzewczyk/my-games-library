@@ -6,13 +6,15 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "PRODUCTS")
 public class Product implements BaseModel {
 
+    public static final String GAME_ID = "GAME_ID";
+
     @DatabaseField(generatedId = true)
     private int id;
 
     @DatabaseField(columnName = "USER_ID", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private User user;
 
-    @DatabaseField(columnName = "GAME_ID", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = GAME_ID, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Game game;
 
     @DatabaseField(columnName = "MY_RATING",   width = 2)

@@ -4,7 +4,6 @@ import pl.myGamesLibrary.database.dao.CategoryDao;
 import pl.myGamesLibrary.database.dao.GameDao;
 import pl.myGamesLibrary.database.dao.ProductDao;
 import pl.myGamesLibrary.database.dao.UserDao;
-import pl.myGamesLibrary.database.dbuitls.DBManager;
 import pl.myGamesLibrary.database.models.*;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 
@@ -147,7 +146,7 @@ public class FillDatabase {
         User user2 = new User();
         user2.setNick("q");
         user2.setEmail("q");
-        user2.setLangualge("PL");
+        user2.setLangualge("ANG");
         user2.setPassword("q");
         user2.setBirthDay(new Date(92,12,14));
 

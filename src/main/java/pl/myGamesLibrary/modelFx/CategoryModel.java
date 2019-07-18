@@ -7,9 +7,11 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
 import pl.myGamesLibrary.database.dao.CategoryDao;
 import pl.myGamesLibrary.database.dao.GameDao;
+import pl.myGamesLibrary.database.dao.ProductDao;
 import pl.myGamesLibrary.database.dbuitls.DBManager;
 import pl.myGamesLibrary.database.models.Category;
 import pl.myGamesLibrary.database.models.Game;
+import pl.myGamesLibrary.database.models.Product;
 import pl.myGamesLibrary.utils.converters.ConverterCategory;
 import pl.myGamesLibrary.utils.exceptions.ApplicationException;
 import sun.reflect.generics.tree.Tree;
@@ -53,7 +55,15 @@ public class CategoryModel {
     public void deleteCatogoryById() throws ApplicationException, SQLException {
         CategoryDao categoryDao = new CategoryDao();
         categoryDao.deleteById(Category.class, this.category.getValue().getId());
+
         GameDao gameDao = new GameDao();
+        List<Game> games = gameDao.findAllByColumnName(Game.CATEGORY_ID, this.getCategory().getId());
+
+        ProductDao productDao = new ProductDao();
+        for(Game game : games) {
+            productDao.deleteByColumnName(Product.GAME_ID, game.getId());
+        }
+
         gameDao.deleteByColumnName(Game.CATEGORY_ID, this.category.getValue().getId());
         init();
     }

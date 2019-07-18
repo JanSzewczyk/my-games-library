@@ -16,23 +16,19 @@ public class CategoryController {
 
     @FXML
     private Button addCategoryButton;
-
     @FXML
     private Button editCategoryButton;
-
     @FXML
     private Button deleteCategoryButton;
-
     @FXML
     private TextField categoryTextField;
-
     @FXML
     private ComboBox<CategoryFx> categoryComboBox;
-
     @FXML
     private TreeView<String> categoryTreeView;
 
     private CategoryModel categoryModel;
+
 
     @FXML
     public void initialize() {

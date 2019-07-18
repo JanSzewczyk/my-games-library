@@ -13,10 +13,11 @@ import java.util.Locale;
 
 public class ApplicationController {
 
-    public static final String MENU_APP_FXML = "/fxml/MenuApp.fxml";
+    private static final String MENU_APP_FXML = "/fxml/MenuApp.fxml";
 
     @FXML
     public StackPane mainStackPane;
+
 
     @FXML
     public void initialize(){
