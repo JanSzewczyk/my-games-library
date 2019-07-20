@@ -21,6 +21,7 @@ public class SignUpModel {
 
     public void init(){
         this.languages.add("ANG");
+        this.languages.add("DE");
         this.languages.add("PL");
     }
 
