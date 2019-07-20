@@ -28,11 +28,13 @@ Project is created with:
 
 ## Detailed description of the application
 
-The appearance of the login panel and registration panel.
+The appearance of the login panel and registration panel. 
+During registration, the new user can choose the language in which the application will be displayed.
 
 ![Algorithm schema](./src/main/resources/screens/login.PNG)
 ![Algorithm schema](./src/main/resources/screens/signup.PNG)
 
-After logging in, the user can go to the my games panel, in which there is a list of games added to the library. After selecting a game from the list, all information about this game is displayed.
+After logging in, the user can go to the My games panel, in which there is a list of games added to the library. 
+After selecting a game from the list, all information about this game is displayed.
 
-![Algorithm schema](./src/main/resources/screens/userpanel.PNG)
+![Algorithm schema](./src/main/resources/screens/userPanel.PNG)
