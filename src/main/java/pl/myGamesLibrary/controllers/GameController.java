@@ -84,7 +84,6 @@ public class GameController {
     public void addGameOnAction() {
         try {
             this.gameModel.saveGameInDataBase();
-            clearFields();
         } catch (ApplicationException e) {
             DialogUtils.errorDialog(e.getMessage());
         }

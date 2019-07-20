@@ -1,4 +1,4 @@
-package pl.myGamesLibrary.Apps;
+package pl.myGamesLibrary.App;
 
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -21,11 +21,10 @@ public class Application extends javafx.application.Application {
         Scene scene = new Scene(borderPane);
         primaryStage.setScene(scene);
         primaryStage.setTitle(FxmlUtils.getResourceBundle().getString("title.application"));
-        //primaryStage.setAlwaysOnTop(true);
         primaryStage.setResizable(false);
         primaryStage.show();
 
         DBManager.initDatabase();
-        FillDatabase.fillDatabase();
+        FillDatabase.fillDatabase(); //here an additional code is launched that fills the database
     }
 }

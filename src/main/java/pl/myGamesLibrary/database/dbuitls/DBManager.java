@@ -24,7 +24,7 @@ public class DBManager {
 
     public static void initDatabase() {
         createConnectionSource();
-        dropTable();
+        dropTable(); //comment out, to delete tables in the database every time
         createTable();
         closeConnectionSource();
     }
